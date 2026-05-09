@@ -1,0 +1,15 @@
+{
+  "bars": 160,
+  "max_drawdown": -0.008411,
+  "params": {
+    "fast": 6,
+    "slow": 18
+  },
+  "score": 0.113234,
+  "sharpe_like": 0.459734,
+  "strategy": "current",
+  "total_return": 0.002515,
+  "trade_count": 19,
+  "warning": "Example fixture result; proves plumbing only, not edge.",
+  "win_rate": 0.379747
+}

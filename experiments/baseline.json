@@ -1,0 +1,8 @@
+{
+  "name": "baseline_ma_cross",
+  "hypothesis": "A boring moving-average crossover should create a stable offline smoke-test baseline on the demo fixture.",
+  "strategy": "baseline",
+  "params": {"fast": 5, "slow": 20},
+  "cost_bps": 1.0,
+  "decision_threshold": 0.0
+}

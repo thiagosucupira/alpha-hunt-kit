@@ -1,0 +1,8 @@
+{
+  "name": "current_agent_candidate",
+  "hypothesis": "A slightly faster MA crossover with a deadband may reduce noisy flips on the demo fixture.",
+  "strategy": "current",
+  "params": {"fast": 6, "slow": 18},
+  "cost_bps": 1.0,
+  "decision_threshold": 0.0
+}

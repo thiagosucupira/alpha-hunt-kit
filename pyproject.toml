@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alpha-hunt-kit"
+version = "0.1.0"
+description = "Portable, offline-first alpha research loop for coding agents: source, score, falsify, test, and graveyard ideas."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Curupira"}]
+keywords = ["trading", "research", "agents", "backtesting", "alpha"]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+visuals = ["pillow>=10.0", "manim>=0.18"]
+yfinance = ["yfinance>=0.2"]
+
+[project.scripts]
+alpha-hunt = "alpha_hunt.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["alpha_hunt*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

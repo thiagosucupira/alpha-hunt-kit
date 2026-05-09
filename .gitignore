@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+
+# Local alpha-hunt runtime state
+.alpha-hunt/
+runs/
+
+# Secrets / machine-local config
+.env
+.env.*
+*.key
+*.pem
+*token*
+*secret*
+
+# Render artifacts
+media/
+.manim-media/
