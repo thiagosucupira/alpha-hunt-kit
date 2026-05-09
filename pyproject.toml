@@ -13,6 +13,11 @@ authors = [{name = "Curupira"}]
 keywords = ["trading", "research", "agents", "backtesting", "alpha"]
 dependencies = []
 
+[project.urls]
+Homepage = "https://github.com/thiagosucupira/alpha-hunt-kit"
+Repository = "https://github.com/thiagosucupira/alpha-hunt-kit"
+Issues = "https://github.com/thiagosucupira/alpha-hunt-kit/issues"
+
 [project.optional-dependencies]
 dev = ["pytest>=8.0", "ruff>=0.5"]
 visuals = ["pillow>=10.0", "manim>=0.18"]

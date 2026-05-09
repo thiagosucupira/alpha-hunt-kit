@@ -18,7 +18,7 @@ It packages the discipline around alpha research: source -> score -> falsify -> 
 ## Quick start
 
 ```bash
-git clone https://github.com/<owner>/alpha-hunt-kit.git
+git clone https://github.com/thiagosucupira/alpha-hunt-kit.git
 cd alpha-hunt-kit
 python3 -m venv .venv
 source .venv/bin/activate
@@ -33,6 +33,23 @@ pytest -q
 ```
 
 Expected result: a local `.alpha-hunt/runs/<run_id>/` directory with `metrics.json` and `report.md`, plus updated rows in `state/experiments.tsv`.
+
+## Copy-paste prompt for your agent
+
+After cloning, paste this into Codex, Claude Code, Cursor, OpenCode, or any coding agent:
+
+```bash
+cat docs/agent_prompt.md
+```
+
+Or run the wrapper directly:
+
+```bash
+AGENT_CMD="codex" scripts/run_agent_loop.sh
+# or: AGENT_CMD="claude" scripts/run_agent_loop.sh
+```
+
+The root `AGENTS.md` carries the same safety boundary for agents that auto-load repository instructions.
 
 ## The loop
 
