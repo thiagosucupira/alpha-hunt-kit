@@ -16,7 +16,7 @@ BANNED_PATTERNS = [
     r"api[_-]?key\s*[:=]\s*['\"][^'\"]{8,}",
     r"secret\s*[:=]\s*['\"][^'\"]{8,}",
 ]
-SKIP_DIRS = {".git", ".venv", "__pycache__", ".pytest_cache", ".alpha-hunt", "dist", "build"}
+SKIP_DIRS = {".git", ".venv", "__pycache__", ".pytest_cache", ".ruff_cache", ".alpha-hunt", "dist", "build"}
 TEXT_EXTS = {".py", ".md", ".txt", ".json", ".toml", ".yaml", ".yml", ".sh", ".gitignore", ""}
 
 

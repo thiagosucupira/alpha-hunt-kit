@@ -57,7 +57,8 @@ def text_box(d, xy, title, body, color, width=300, height=140):
 
 
 def arrow(d, start, end, color=(180, 200, 210), width=4):
-    x1, y1 = start; x2, y2 = end
+    x1, y1 = start
+    x2, y2 = end
     d.line((x1, y1, x2, y2), fill=color+(190,), width=width)
     if x2 >= x1:
         pts = [(x2, y2), (x2-16, y2-9), (x2-16, y2+9)]
@@ -67,7 +68,8 @@ def arrow(d, start, end, color=(180, 200, 210), width=4):
 
 
 def boundary():
-    img = base(1400, 860); d = ImageDraw.Draw(img)
+    img = base(1400, 860)
+    d = ImageDraw.Draw(img)
     d.text((70, 54), "Package the hunt, not the agent", font=FT, fill=TEXT)
     d.text((74, 120), "Portable research contract: sources, prompts, state, tests, examples — no secrets.", font=FM, fill=MUTED)
     # host chips: keep them below the subtitle so the hero title owns the top line.
@@ -102,7 +104,8 @@ def boundary():
 
 
 def loop():
-    img = base(1400, 860); d = ImageDraw.Draw(img)
+    img = base(1400, 860)
+    d = ImageDraw.Draw(img)
     d.text((70, 54), "Alpha Hunt loop", font=FT, fill=TEXT)
     d.text((74, 120), "Seed -> Score -> Falsify -> Cheap test -> Distill -> Ship or kill", font=FM, fill=MUTED)
     nodes = [
@@ -124,7 +127,8 @@ def loop():
 
 
 def ladder():
-    img = base(1400, 860); d = ImageDraw.Draw(img)
+    img = base(1400, 860)
+    d = ImageDraw.Draw(img)
     d.text((70, 54), "Data access ladder", font=FT, fill=TEXT)
     d.text((74, 120), "First run should be open. Serious validation must be canonical.", font=FM, fill=MUTED)
     tiers = [
@@ -147,5 +151,7 @@ def ladder():
     img.convert('RGB').save(OUT/'alpha-hunt-data-access-ladder.png', quality=95)
 
 if __name__ == '__main__':
-    boundary(); loop(); ladder()
+    boundary()
+    loop()
+    ladder()
     print('\n'.join(str(p) for p in sorted(OUT.glob('alpha-hunt*.png'))))
