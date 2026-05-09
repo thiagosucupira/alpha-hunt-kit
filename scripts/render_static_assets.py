@@ -70,12 +70,16 @@ def boundary():
     img = base(1400, 860); d = ImageDraw.Draw(img)
     d.text((70, 54), "Package the hunt, not the agent", font=FT, fill=TEXT)
     d.text((74, 120), "Portable research contract: sources, prompts, state, tests, examples — no secrets.", font=FM, fill=MUTED)
-    # host chips
-    for i, chip in enumerate(["Hermes", "OpenClaw", "cron", "GitHub Actions", "any agent"]):
-        x = 760 + i*118
-        d.rounded_rectangle((x, 54, x+104, 88), radius=17, fill=(10, 28, 38, 230), outline=TEAL+(120,), width=1)
-        d.text((x+12, 62), chip, font=FS, fill=TEAL)
-    d.text((820, 99), "hosts schedule; package owns the contract", font=FS, fill=MUTED)
+    # host chips: keep them below the subtitle so the hero title owns the top line.
+    x = 74
+    y = 156
+    for chip in ["Hermes", "OpenClaw", "cron", "GitHub Actions", "any agent"]:
+        bbox = d.textbbox((0, 0), chip, font=FS)
+        w = bbox[2] - bbox[0] + 28
+        d.rounded_rectangle((x, y, x+w, y+34), radius=17, fill=(10, 28, 38, 230), outline=TEAL+(120,), width=1)
+        d.text((x+14, y+8), chip, font=FS, fill=TEAL)
+        x += w + 12
+    d.text((745, 164), "hosts schedule; package owns the contract", font=FS, fill=MUTED)
     # center package
     d.rounded_rectangle((420, 210, 980, 645), radius=34, fill=(9, 20, 30, 245), outline=TEAL+(210,), width=3)
     d.text((470, 245), "daily-alpha-hunt/", font=FB, fill=TEAL)
@@ -93,7 +97,7 @@ def boundary():
     arrow(d, (370, 315), (420, 315), TEAL)
     arrow(d, (980, 315), (1030, 315), GREEN)
     d.rounded_rectangle((90, 710, 1310, 775), radius=24, fill=(45, 15, 24, 220), outline=RED+(180,), width=2)
-    d.text((125, 731), "Quarantine: credentials, live permissions, private paths, delivery targets, and alpha claims from toy data stay outside.", font=FM, fill=(255, 205, 210))
+    d.text((125, 731), "Quarantine: credentials, live permissions, private paths, delivery targets, and toy-data alpha claims.", font=FM, fill=(255, 205, 210))
     img.convert('RGB').save(OUT/'alpha-hunt-package-boundary.png', quality=95)
 
 
