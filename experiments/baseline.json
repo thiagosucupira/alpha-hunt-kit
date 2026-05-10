@@ -4,5 +4,7 @@
   "strategy": "baseline",
   "params": {"fast": 5, "slow": 20},
   "cost_bps": 1.0,
+  "null_trials": 100,
+  "null_seed": 1337,
   "decision_threshold": 0.0
 }

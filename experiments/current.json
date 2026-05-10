@@ -4,5 +4,7 @@
   "strategy": "current",
   "params": {"fast": 6, "slow": 18},
   "cost_bps": 1.0,
+  "null_trials": 100,
+  "null_seed": 1337,
   "decision_threshold": 0.0
 }

@@ -32,7 +32,9 @@ def _run(config_path: Path, data_path: Path, mode: str, budget_seconds: int | No
 
     current = read_current(root)
     champion_score = current.get("score")
-    if champion_score is None or metrics["score"] > float(champion_score):
+    passes_null_gate = metrics.get("beats_null_p95", True)
+    beats_champion = champion_score is None or metrics["score"] > float(champion_score)
+    if beats_champion and passes_null_gate:
         decision = "KEEP_CANDIDATE"
     else:
         decision = "DISCARD_CANDIDATE"

@@ -17,8 +17,21 @@ def write_report(path: Path, run_id: str, config: dict[str, Any], metrics: dict[
         "## Metrics",
         "",
     ]
-    for key in ["strategy", "trade_count", "win_rate", "total_return", "max_drawdown", "sharpe_like", "score"]:
-        lines.append(f"- {key}: `{metrics.get(key)}`")
+    for key in [
+        "strategy",
+        "trade_count",
+        "win_rate",
+        "total_return",
+        "max_drawdown",
+        "sharpe_like",
+        "score",
+        "null_model",
+        "null_trials",
+        "null_score_p95",
+        "beats_null_p95",
+    ]:
+        if key in metrics:
+            lines.append(f"- {key}: `{metrics.get(key)}`")
     lines.extend(
         [
             "",

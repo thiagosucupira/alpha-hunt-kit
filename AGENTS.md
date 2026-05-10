@@ -18,7 +18,8 @@ Rules:
 4. Every experiment needs a hypothesis. No blind grid search.
 5. Check the graveyard before testing so you do not repeat refuted ideas.
 6. Run `pytest -q` and `alpha-hunt trial experiments/current.json --data fixtures/bars/demo_ohlcv.csv --budget-seconds 30`.
-7. If the result improves the champion and passes constraints, run `alpha-hunt promote <run_id>`.
-8. If it fails, run `alpha-hunt bury <run_id> --reason "<short reason>"` and revert unnecessary changes.
-9. Keep notes concise and artifact-backed.
-10. Fixture results prove plumbing, not edge.
+7. Treat `beats_null_p95=false` as a failed first-pass gate.
+8. If the result improves the champion and passes enabled gates, run `alpha-hunt promote <run_id>`.
+9. If it fails, run `alpha-hunt bury <run_id> --reason "<short reason>"` and revert unnecessary changes.
+10. Keep notes concise and artifact-backed.
+11. Fixture results prove plumbing only, not edge.

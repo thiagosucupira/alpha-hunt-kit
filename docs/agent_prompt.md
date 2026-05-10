@@ -3,7 +3,7 @@
 You are running the Alpha Hunt loop in this repository.
 
 Goal:
-Improve the current experiment score on the offline fixture backtest while preserving scientific discipline.
+Run one disciplined candidate test on the offline fixture. Improvement only matters if the candidate also passes the enabled falsification gates.
 
 First read:
 - README.md
@@ -25,13 +25,14 @@ Rules:
 6. Run:
    - `pytest -q`
    - `alpha-hunt trial experiments/current.json --data fixtures/bars/demo_ohlcv.csv --budget-seconds 30`
-7. If the run improves the champion and passes constraints, run:
+7. Treat `beats_null_p95=false` as a failed first-pass gate, even if the raw score improved.
+8. If the run improves the champion and passes enabled gates, run:
    - `alpha-hunt promote <run_id>`
-8. If it fails, run:
+9. If it fails, run:
    - `alpha-hunt bury <run_id> --reason "<short reason>"`
    Then revert unnecessary code/config changes.
-9. Keep notes concise and machine-readable.
-10. Repeat until stopped or until you have completed the requested number of experiments.
+10. Keep notes concise and machine-readable.
+11. Repeat until stopped or until you have completed the requested number of experiments.
 
 Start now:
 - inspect current state,

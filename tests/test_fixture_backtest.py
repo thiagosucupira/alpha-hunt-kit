@@ -15,3 +15,6 @@ def test_fixture_backtest_is_deterministic():
     assert first["bars"] == 160
     assert first["trade_count"] > 0
     assert "score" in first
+    assert first["null_trials"] == 100
+    assert "null_score_p95" in first
+    assert isinstance(first["beats_null_p95"], bool)

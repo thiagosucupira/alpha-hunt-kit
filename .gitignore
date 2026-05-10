@@ -21,7 +21,3 @@ runs/
 *.pem
 *token*
 *secret*
-
-# Render artifacts
-media/
-.manim-media/
